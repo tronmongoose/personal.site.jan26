@@ -82,6 +82,13 @@ export default async function Home() {
               </a>{" "}
               <span className="text-muted">-&gt; CryptoTron72 profile</span>
             </p>
+            <p>
+              <span className="text-muted">drwxr-xr-x</span>{" "}
+              <a href={content.links.youtube} target="_blank" rel="noopener noreferrer" className="hover:bg-highlight px-1">
+                [youtube]
+              </a>{" "}
+              <span className="text-muted">-&gt; Erik Builds with AI</span>
+            </p>
           </div>
         </div>
 

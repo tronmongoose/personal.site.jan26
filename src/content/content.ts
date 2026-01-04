@@ -8,7 +8,8 @@ export const content = {
     linkedin: "https://www.linkedin.com/in/erik-huckle",
     twitter: "https://x.com/Beyourhuckberry",
     oncyber: "https://oncyber.io/@ctspacepod",
-    seize: "https://6529.io/CryptoTron72"
+    seize: "https://6529.io/CryptoTron72",
+    youtube: "https://www.youtube.com/@ErikBuildswithAI"
   },
   writing: {
     rss: "https://medium.com/feed/@erik-huckle",
