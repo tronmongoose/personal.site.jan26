@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { content } from "@/content/content";
 import { fetchMediumRSS } from "@/lib/rss";
 
@@ -94,31 +95,6 @@ export default async function Home() {
             <a href="#museum" className="hover:bg-highlight px-1">[4] museum</a>
           </div>
         </div>
-
-        {/* ASCII CryptoPunk */}
-        <div className="my-8 flex justify-center">
-          <pre className="text-xs leading-none">
-{`
-              ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-           ▄██████████████████▄
-          ████`}<span className="text-[#4a6fa5]">{`████████████`}</span>{`████
-         ████`}<span className="text-[#4a6fa5]">{`██████████████`}</span>{`████
-        ████`}<span className="text-[#4a6fa5]">{`████████████████`}</span>{`████
-        ████`}<span className="text-[#4a6fa5]">{`████`}</span><span className="text-[#6b4423]">{`████████`}</span><span className="text-[#4a6fa5]">{`████`}</span>{`████
-        ████`}<span className="text-[#4a6fa5]">{`██`}</span><span className="text-[#6b4423]">{`████████████`}</span><span className="text-[#4a6fa5]">{`██`}</span>{`████
-        ████`}<span className="text-[#6b4423]">{`██`}</span><span className="text-[#ffffff]">{`██`}</span><span className="text-[#6b4423]">{`████`}</span><span className="text-[#ffffff]">{`██`}</span><span className="text-[#6b4423]">{`████`}</span>{`████
-        ████`}<span className="text-[#6b4423]">{`████████████████`}</span>{`████
-        ████`}<span className="text-[#6b4423]">{`██████`}</span><span className="text-[#8b4513]">{`████`}</span><span className="text-[#6b4423]">{`██████`}</span>{`████
-        ████`}<span className="text-[#6b4423]">{`████████████████`}</span>{`████
-         ████`}<span className="text-[#4a6fa5]">{`██████████████`}</span>{`████
-          ████`}<span className="text-[#4a6fa5]">{`████████████`}</span>{`████
-           ████`}<span className="text-[#4a6fa5]">{`██████████`}</span>{`████
-           ████`}<span className="text-[#4a6fa5]">{`██████████`}</span>{`████
-            ████`}<span className="text-[#4a6fa5]">{`████████`}</span>{`████
-`}
-          </pre>
-        </div>
-        <p className="text-center text-muted text-xs mb-8">CryptoPunk #7523 | CryptoTron72</p>
 
         <div className="border-t border-border my-8"></div>
 
@@ -258,6 +234,26 @@ export default async function Home() {
               </a>
             </p>
           </div>
+        </section>
+
+        <div className="border-t border-border my-8"></div>
+
+        {/* CryptoPunk */}
+        <section className="mb-8">
+          <p className="text-muted mb-4">$ cat ./identity/punk.png</p>
+          <div className="flex justify-center">
+            <div className="border border-border p-2">
+              <Image
+                src="/media/punk2845.png"
+                alt="CryptoPunk #2845"
+                width={120}
+                height={120}
+                className="pixelated"
+                style={{ imageRendering: "pixelated" }}
+              />
+            </div>
+          </div>
+          <p className="text-center text-muted text-xs mt-3">CryptoPunk #2845</p>
         </section>
 
         <div className="border-t border-border my-8"></div>
