@@ -4,41 +4,42 @@ export const content = {
     tagline: "Writer, creator, and digital explorer. Building at the intersection of technology and creativity."
   },
   links: {
-    medium: "https://medium.com/@erikhuckle",
-    linkedin: "https://www.linkedin.com/in/erikhuckle",
-    twitter: "https://x.com/erikhuckle",
-    oncyber: "https://oncyber.io/erikhuckle"
+    medium: "https://erik-huckle.medium.com/",
+    linkedin: "https://www.linkedin.com/in/erik-huckle",
+    twitter: "https://x.com/Beyourhuckberry",
+    oncyber: "https://oncyber.io/erikhuckle",
+    seize: "https://6529.io/CryptoTron72"
   },
   writing: {
-    rss: "https://medium.com/feed/@erikhuckle",
+    rss: "https://medium.com/feed/@erik-huckle",
     curated: [
       {
         title: "The Future of Digital Creativity",
-        url: "https://medium.com/@erikhuckle/the-future-of-digital-creativity",
+        url: "https://erik-huckle.medium.com/the-future-of-digital-creativity",
         date: "2024-12-15",
         excerpt: "Exploring how emerging technologies are reshaping the creative landscape."
       },
       {
         title: "Building in Public: Lessons Learned",
-        url: "https://medium.com/@erikhuckle/building-in-public",
+        url: "https://erik-huckle.medium.com/building-in-public",
         date: "2024-11-20",
         excerpt: "What I've learned from sharing my creative process openly."
       },
       {
         title: "The Art of Digital Presence",
-        url: "https://medium.com/@erikhuckle/digital-presence",
+        url: "https://erik-huckle.medium.com/digital-presence",
         date: "2024-10-05",
         excerpt: "Crafting an authentic identity in the digital age."
       },
       {
         title: "Technology as a Creative Medium",
-        url: "https://medium.com/@erikhuckle/technology-creative-medium",
+        url: "https://erik-huckle.medium.com/technology-creative-medium",
         date: "2024-09-12",
         excerpt: "Why I see code and creativity as two sides of the same coin."
       },
       {
         title: "Navigating the Creator Economy",
-        url: "https://medium.com/@erikhuckle/creator-economy",
+        url: "https://erik-huckle.medium.com/creator-economy",
         date: "2024-08-28",
         excerpt: "Thoughts on sustainable creativity in a rapidly changing landscape."
       }
@@ -47,21 +48,21 @@ export const content = {
   linkedinPosts: [
     {
       title: "The Power of Building Communities",
-      url: "https://www.linkedin.com/posts/erikhuckle_community-building",
+      url: "https://www.linkedin.com/in/erik-huckle",
       date: "2024-12-01",
       summary: "Reflections on what makes online communities thrive and how we can foster meaningful connections.",
       thumbnail: "/media/linkedin/post1.svg"
     },
     {
       title: "Why I'm Betting on the Metaverse",
-      url: "https://www.linkedin.com/posts/erikhuckle_metaverse-future",
+      url: "https://www.linkedin.com/in/erik-huckle",
       date: "2024-11-15",
       summary: "My thoughts on the evolving landscape of virtual spaces and digital experiences.",
       thumbnail: "/media/linkedin/post2.svg"
     },
     {
       title: "Lessons from a Year of Creating",
-      url: "https://www.linkedin.com/posts/erikhuckle_year-in-review",
+      url: "https://www.linkedin.com/in/erik-huckle",
       date: "2024-10-20",
       summary: "A candid look back at what worked, what didn't, and what I'm carrying forward.",
       thumbnail: "/media/linkedin/post3.svg"
@@ -70,22 +71,22 @@ export const content = {
   tweets: [
     {
       text: "The best projects start with curiosity, not certainty.",
-      url: "https://x.com/erikhuckle/status/1",
+      url: "https://x.com/Beyourhuckberry",
       date: "2024-12-10"
     },
     {
       text: "Building things is how I learn. Shipping them is how I grow.",
-      url: "https://x.com/erikhuckle/status/2",
+      url: "https://x.com/Beyourhuckberry",
       date: "2024-11-25"
     },
     {
       text: "The future isn't about choosing between digital and physical. It's about both.",
-      url: "https://x.com/erikhuckle/status/3",
+      url: "https://x.com/Beyourhuckberry",
       date: "2024-11-10"
     },
     {
       text: "Every creative tool is just a mirror. What you make reflects who you are.",
-      url: "https://x.com/erikhuckle/status/4",
+      url: "https://x.com/Beyourhuckberry",
       date: "2024-10-28"
     }
   ],
