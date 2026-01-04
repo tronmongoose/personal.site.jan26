@@ -95,6 +95,31 @@ export default async function Home() {
           </div>
         </div>
 
+        {/* ASCII CryptoPunk */}
+        <div className="my-8 flex justify-center">
+          <pre className="text-xs leading-none">
+{`
+              ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+           ▄██████████████████▄
+          ████`}<span className="text-[#4a6fa5]">{`████████████`}</span>{`████
+         ████`}<span className="text-[#4a6fa5]">{`██████████████`}</span>{`████
+        ████`}<span className="text-[#4a6fa5]">{`████████████████`}</span>{`████
+        ████`}<span className="text-[#4a6fa5]">{`████`}</span><span className="text-[#6b4423]">{`████████`}</span><span className="text-[#4a6fa5]">{`████`}</span>{`████
+        ████`}<span className="text-[#4a6fa5]">{`██`}</span><span className="text-[#6b4423]">{`████████████`}</span><span className="text-[#4a6fa5]">{`██`}</span>{`████
+        ████`}<span className="text-[#6b4423]">{`██`}</span><span className="text-[#ffffff]">{`██`}</span><span className="text-[#6b4423]">{`████`}</span><span className="text-[#ffffff]">{`██`}</span><span className="text-[#6b4423]">{`████`}</span>{`████
+        ████`}<span className="text-[#6b4423]">{`████████████████`}</span>{`████
+        ████`}<span className="text-[#6b4423]">{`██████`}</span><span className="text-[#8b4513]">{`████`}</span><span className="text-[#6b4423]">{`██████`}</span>{`████
+        ████`}<span className="text-[#6b4423]">{`████████████████`}</span>{`████
+         ████`}<span className="text-[#4a6fa5]">{`██████████████`}</span>{`████
+          ████`}<span className="text-[#4a6fa5]">{`████████████`}</span>{`████
+           ████`}<span className="text-[#4a6fa5]">{`██████████`}</span>{`████
+           ████`}<span className="text-[#4a6fa5]">{`██████████`}</span>{`████
+            ████`}<span className="text-[#4a6fa5]">{`████████`}</span>{`████
+`}
+          </pre>
+        </div>
+        <p className="text-center text-muted text-xs mb-8">CryptoPunk #7523 | CryptoTron72</p>
+
         <div className="border-t border-border my-8"></div>
 
         {/* Writing Section */}
