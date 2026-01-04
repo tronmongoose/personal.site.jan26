@@ -11,9 +11,11 @@ const config: Config = {
       colors: {
         bg: "var(--bg)",
         fg: "var(--fg)",
+        "fg-dim": "var(--fg-dim)",
         muted: "var(--muted)",
-        divider: "var(--divider)",
         accent: "var(--accent)",
+        border: "var(--border)",
+        highlight: "var(--highlight)",
       },
       fontFamily: {
         mono: [
@@ -28,7 +30,7 @@ const config: Config = {
         ],
       },
       maxWidth: {
-        terminal: "1080px",
+        terminal: "900px",
       },
     },
   },

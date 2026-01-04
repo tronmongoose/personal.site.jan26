@@ -1,13 +1,3 @@
-import {
-  TerminalLayout,
-  HintLine,
-  PromptLine,
-  Divider,
-  Section,
-  LinkCommand,
-  OutputBlock,
-  MediaCard,
-} from "@/components/terminal";
 import { content } from "@/content/content";
 import { fetchMediumRSS } from "@/lib/rss";
 
@@ -15,178 +5,254 @@ export default async function Home() {
   const writingItems = await fetchMediumRSS();
 
   return (
-    <TerminalLayout>
-      {/* Boot Header */}
-      <header className="mb-6">
-        <div className="border border-divider p-4 mb-4">
-          <h1 className="text-accent text-xl md:text-2xl font-normal tracking-wide">
-            ERIK HUCKLE
-          </h1>
-          <p className="text-muted text-sm mt-1">
-            ~/portfolio
+    <main className="min-h-screen bg-bg text-fg font-mono p-4 md:p-8">
+      <div className="max-w-terminal mx-auto">
+
+        {/* Boot sequence */}
+        <div className="mb-6 text-fg-dim text-xs">
+          <p>HUCKLE TERMINAL v1.0.0</p>
+          <p>Copyright (c) 2025 Erik Huckle</p>
+          <p>Loading profile data... <span className="text-fg">OK</span></p>
+          <p>Establishing connections... <span className="text-fg">OK</span></p>
+          <p className="mt-2">Type &apos;help&apos; for available commands or click any [link]</p>
+        </div>
+
+        {/* ASCII Header */}
+        <pre className="text-fg text-xs md:text-sm leading-tight mb-6 overflow-x-auto">
+{`
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║   ███████╗██████╗ ██╗██╗  ██╗                                ║
+║   ██╔════╝██╔══██╗██║██║ ██╔╝                                ║
+║   █████╗  ██████╔╝██║█████╔╝                                 ║
+║   ██╔══╝  ██╔══██╗██║██╔═██╗                                 ║
+║   ███████╗██║  ██║██║██║  ██╗                                ║
+║   ╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝                                ║
+║                                                               ║
+║   ██╗  ██╗██╗   ██╗ ██████╗██╗  ██╗██╗     ███████╗          ║
+║   ██║  ██║██║   ██║██╔════╝██║ ██╔╝██║     ██╔════╝          ║
+║   ███████║██║   ██║██║     █████╔╝ ██║     █████╗            ║
+║   ██╔══██║██║   ██║██║     ██╔═██╗ ██║     ██╔══╝            ║
+║   ██║  ██║╚██████╔╝╚██████╗██║  ██╗███████╗███████╗          ║
+║   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝          ║
+║                                                               ║
+║   Writer • Creator • Builder                                  ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+`}
+        </pre>
+
+        {/* Command prompt - Links */}
+        <div className="mb-8">
+          <p className="text-muted mb-2">$ ls -la ./links/</p>
+          <div className="pl-4 space-y-1">
+            <p>
+              <span className="text-muted">drwxr-xr-x</span>{" "}
+              <a href={content.links.medium} target="_blank" rel="noopener noreferrer" className="hover:bg-highlight px-1">
+                [medium]
+              </a>{" "}
+              <span className="text-muted">-&gt; writing &amp; articles</span>
+            </p>
+            <p>
+              <span className="text-muted">drwxr-xr-x</span>{" "}
+              <a href={content.links.linkedin} target="_blank" rel="noopener noreferrer" className="hover:bg-highlight px-1">
+                [linkedin]
+              </a>{" "}
+              <span className="text-muted">-&gt; professional profile</span>
+            </p>
+            <p>
+              <span className="text-muted">drwxr-xr-x</span>{" "}
+              <a href={content.links.twitter} target="_blank" rel="noopener noreferrer" className="hover:bg-highlight px-1">
+                [twitter]
+              </a>{" "}
+              <span className="text-muted">-&gt; @Beyourhuckberry</span>
+            </p>
+            <p>
+              <span className="text-muted">drwxr-xr-x</span>{" "}
+              <a href={content.links.oncyber} target="_blank" rel="noopener noreferrer" className="hover:bg-highlight px-1">
+                [oncyber]
+              </a>{" "}
+              <span className="text-muted">-&gt; 3D digital museum</span>
+            </p>
+            <p>
+              <span className="text-muted">drwxr-xr-x</span>{" "}
+              <a href={content.links.seize} target="_blank" rel="noopener noreferrer" className="hover:bg-highlight px-1">
+                [6529]
+              </a>{" "}
+              <span className="text-muted">-&gt; CryptoTron72 profile</span>
+            </p>
+          </div>
+        </div>
+
+        {/* Navigation */}
+        <div className="mb-8">
+          <p className="text-muted mb-2">$ cat ./sections.txt</p>
+          <div className="pl-4 flex flex-wrap gap-4">
+            <a href="#writing" className="hover:bg-highlight px-1">[1] writing</a>
+            <a href="#linkedin" className="hover:bg-highlight px-1">[2] linkedin</a>
+            <a href="#tweets" className="hover:bg-highlight px-1">[3] tweets</a>
+            <a href="#museum" className="hover:bg-highlight px-1">[4] museum</a>
+          </div>
+        </div>
+
+        <div className="border-t border-border my-8"></div>
+
+        {/* Writing Section */}
+        <section id="writing" className="mb-8 scroll-mt-4">
+          <p className="text-muted mb-2">$ cat ./writing/recent.log</p>
+          <pre className="text-fg-dim text-xs mb-4">
+{`┌──────────────────────────────────────────────────────────────┐
+│  RECENT ARTICLES                                             │
+└──────────────────────────────────────────────────────────────┘`}
+          </pre>
+          <div className="pl-4 space-y-4">
+            {writingItems.map((item, index) => (
+              <div key={index} className="group">
+                <p>
+                  <span className="text-muted">[{String(index + 1).padStart(2, '0')}]</span>{" "}
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:bg-highlight px-1"
+                  >
+                    {item.title}
+                  </a>
+                </p>
+                <p className="text-muted text-xs pl-5">
+                  {item.date} | {item.excerpt}
+                </p>
+              </div>
+            ))}
+            <p className="mt-4">
+              <span className="text-muted">$</span>{" "}
+              <a href={content.links.medium} target="_blank" rel="noopener noreferrer" className="hover:bg-highlight px-1">
+                open medium --all
+              </a>
+            </p>
+          </div>
+        </section>
+
+        <div className="border-t border-border my-8"></div>
+
+        {/* LinkedIn Section */}
+        <section id="linkedin" className="mb-8 scroll-mt-4">
+          <p className="text-muted mb-2">$ cat ./linkedin/posts.log</p>
+          <pre className="text-fg-dim text-xs mb-4">
+{`┌──────────────────────────────────────────────────────────────┐
+│  LINKEDIN POSTS                                              │
+└──────────────────────────────────────────────────────────────┘`}
+          </pre>
+          <div className="pl-4 space-y-4">
+            {content.linkedinPosts.map((post, index) => (
+              <div key={index}>
+                <p>
+                  <span className="text-muted">[{String(index + 1).padStart(2, '0')}]</span>{" "}
+                  <a
+                    href={post.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:bg-highlight px-1"
+                  >
+                    {post.title}
+                  </a>
+                </p>
+                <p className="text-muted text-xs pl-5">
+                  {post.date} | {post.summary}
+                </p>
+              </div>
+            ))}
+            <p className="mt-4">
+              <span className="text-muted">$</span>{" "}
+              <a href={content.links.linkedin} target="_blank" rel="noopener noreferrer" className="hover:bg-highlight px-1">
+                open linkedin --profile
+              </a>
+            </p>
+          </div>
+        </section>
+
+        <div className="border-t border-border my-8"></div>
+
+        {/* Twitter Section */}
+        <section id="tweets" className="mb-8 scroll-mt-4">
+          <p className="text-muted mb-2">$ tail -f ./twitter/feed.log</p>
+          <pre className="text-fg-dim text-xs mb-4">
+{`┌──────────────────────────────────────────────────────────────┐
+│  @Beyourhuckberry                                            │
+└──────────────────────────────────────────────────────────────┘`}
+          </pre>
+          <div className="pl-4 space-y-3">
+            {content.tweets.map((tweet, index) => (
+              <div key={index}>
+                <p>
+                  <span className="text-muted">&gt;</span>{" "}
+                  <a
+                    href={tweet.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:bg-highlight px-1"
+                  >
+                    &quot;{tweet.text}&quot;
+                  </a>
+                </p>
+                <p className="text-muted text-xs pl-3">
+                  — {tweet.date}
+                </p>
+              </div>
+            ))}
+            <p className="mt-4">
+              <span className="text-muted">$</span>{" "}
+              <a href={content.links.twitter} target="_blank" rel="noopener noreferrer" className="hover:bg-highlight px-1">
+                follow @Beyourhuckberry
+              </a>
+            </p>
+          </div>
+        </section>
+
+        <div className="border-t border-border my-8"></div>
+
+        {/* Museum Section */}
+        <section id="museum" className="mb-8 scroll-mt-4">
+          <p className="text-muted mb-2">$ ./museum --launch</p>
+          <pre className="text-fg-dim text-xs mb-4">
+{`┌──────────────────────────────────────────────────────────────┐
+│  3D DIGITAL MUSEUM                                           │
+└──────────────────────────────────────────────────────────────┘`}
+          </pre>
+          <div className="pl-4">
+            <p className="mb-2">
+              <span className="text-fg">{content.oncyber.title}</span>
+            </p>
+            <p className="text-muted text-sm mb-4">
+              {content.oncyber.summary}
+            </p>
+            <p>
+              <span className="text-muted">$</span>{" "}
+              <a href={content.oncyber.url} target="_blank" rel="noopener noreferrer" className="hover:bg-highlight px-1">
+                enter museum
+              </a>
+            </p>
+          </div>
+        </section>
+
+        <div className="border-t border-border my-8"></div>
+
+        {/* Footer */}
+        <footer className="text-muted text-xs">
+          <p>$ exit</p>
+          <p className="mt-2">Connection closed.</p>
+          <p className="mt-4">
+            <span className="text-fg-dim">───────────────────────────────────────</span>
           </p>
-        </div>
-        <div className="flex gap-4 text-muted text-sm">
-          <span>status: <span className="text-green-500">online</span></span>
-          <span>mode: click-only</span>
-        </div>
-      </header>
+          <p className="mt-2">
+            © 2025 Erik Huckle | Built with Next.js
+          </p>
+          <p className="mt-1">
+            <span className="cursor">█</span>
+          </p>
+        </footer>
 
-      <HintLine />
-
-      <Divider />
-
-      {/* Quick Commands */}
-      <section className="mb-6">
-        <h2 className="text-fg text-sm mb-3">$ COMMANDS</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1">
-          <LinkCommand
-            label="open medium"
-            href={content.links.medium}
-            external
-            note="Writing"
-          />
-          <LinkCommand
-            label="open linkedin"
-            href={content.links.linkedin}
-            external
-            note="Profile"
-          />
-          <LinkCommand
-            label="open twitter"
-            href={content.links.twitter}
-            external
-            note="@Beyourhuckberry"
-          />
-          <LinkCommand
-            label="open oncyber"
-            href={content.links.oncyber}
-            external
-            note="3D museum"
-          />
-          <LinkCommand
-            label="open seize"
-            href={content.links.seize}
-            external
-            note="6529 profile"
-          />
-        </div>
-
-        <div className="mt-3 flex flex-wrap gap-x-6 gap-y-1">
-          <LinkCommand label="show writing" href="#writing" />
-          <LinkCommand label="show linkedin" href="#linkedin" />
-          <LinkCommand label="show tweets" href="#tweets" />
-          <LinkCommand label="show museum" href="#museum" />
-        </div>
-      </section>
-
-      <Divider />
-
-      {/* Writing Section */}
-      <Section id="writing" title="Writing">
-        <OutputBlock>
-          {writingItems.map((item, index) => (
-            <div key={index} className="mb-3 pb-3 border-b border-divider last:border-0 last:mb-0 last:pb-0">
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent hover:underline"
-              >
-                {item.title}
-              </a>
-              <span className="text-muted text-sm ml-2">{item.date}</span>
-              {item.excerpt && (
-                <p className="text-fg text-sm mt-1 opacity-80">{item.excerpt}</p>
-              )}
-            </div>
-          ))}
-          <div className="mt-3">
-            <LinkCommand
-              label="open medium"
-              href={content.links.medium}
-              external
-              note="view all"
-            />
-          </div>
-        </OutputBlock>
-      </Section>
-
-      <Divider />
-
-      {/* LinkedIn Section */}
-      <Section id="linkedin" title="LinkedIn">
-        <OutputBlock>
-          <p className="text-muted text-sm mb-3">Selected posts from my profile</p>
-          {content.linkedinPosts.map((post, index) => (
-            <MediaCard
-              key={index}
-              title={post.title}
-              url={post.url}
-              date={post.date}
-              summary={post.summary}
-              thumbnail={post.thumbnail}
-            />
-          ))}
-          <LinkCommand
-            label="open linkedin"
-            href={content.links.linkedin}
-            external
-            note="view profile"
-          />
-        </OutputBlock>
-      </Section>
-
-      <Divider />
-
-      {/* Twitter Section */}
-      <Section id="tweets" title="Twitter/X">
-        <OutputBlock>
-          <p className="text-muted text-sm mb-3">@Beyourhuckberry</p>
-          {content.tweets.map((tweet, index) => (
-            <div key={index} className="mb-2 pb-2 border-b border-divider last:border-0 last:mb-0 last:pb-0">
-              <a
-                href={tweet.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-fg hover:text-accent"
-              >
-                &ldquo;{tweet.text}&rdquo;
-              </a>
-              <span className="text-muted text-sm ml-2">{tweet.date}</span>
-            </div>
-          ))}
-          <div className="mt-3">
-            <LinkCommand
-              label="open twitter"
-              href={content.links.twitter}
-              external
-              note="follow"
-            />
-          </div>
-        </OutputBlock>
-      </Section>
-
-      <Divider />
-
-      {/* OnCyber Section */}
-      <Section id="museum" title="Museum">
-        <OutputBlock>
-          <MediaCard
-            title={content.oncyber.title}
-            url={content.oncyber.url}
-            summary={content.oncyber.summary}
-            thumbnail={content.oncyber.thumbnail}
-          />
-        </OutputBlock>
-      </Section>
-
-      <Divider />
-
-      {/* Footer */}
-      <footer className="text-muted text-sm py-4">
-        <PromptLine command="session ended" />
-      </footer>
-    </TerminalLayout>
+      </div>
+    </main>
   );
 }

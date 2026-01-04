@@ -3,11 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0B0E10;
-  --fg: #D7DEE7;
-  --muted: #7F8A96;
-  --divider: #25303A;
-  --accent: #FFCC66;
+  --bg: #0a0a0a;
+  --fg: #33ff33;
+  --fg-dim: #1a991a;
+  --muted: #666666;
+  --accent: #33ff33;
+  --border: #1a1a1a;
+  --highlight: #003300;
 }
 
 * {
@@ -22,30 +24,70 @@ body {
   color: var(--fg);
   background: var(--bg);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.5;
   min-height: 100vh;
 }
 
+/* CRT scanline effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: 1000;
+}
+
+/* Subtle glow on text */
+body {
+  text-shadow: 0 0 2px rgba(51, 255, 51, 0.3);
+}
+
 ::selection {
-  background: var(--accent);
+  background: var(--fg);
   color: var(--bg);
 }
 
 a {
-  color: var(--accent);
+  color: var(--fg);
   text-decoration: none;
-  transition: text-decoration 0.15s ease;
 }
 
 a:hover,
 a:focus {
   text-decoration: underline;
+  background: var(--highlight);
 }
 
 a:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 1px solid var(--fg);
   outline-offset: 2px;
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+/* Terminal prompt styling */
+.prompt::before {
+  content: "$ ";
+  color: var(--fg);
 }
 
 @layer utilities {
