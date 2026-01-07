@@ -1,36 +1,187 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Terminal Portfolio
 
-## Getting Started
+A retro terminal-themed portfolio site with a CLI aesthetic. Built with Next.js, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+![Terminal Portfolio](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
+![Tailwind](https://img.shields.io/badge/Tailwind-3-38bdf8?style=flat-square&logo=tailwindcss)
 
+## Features
+
+- **Full Terminal Aesthetic**: Authentic CLI/terminal look and feel with CRT scanline effects
+- **Warm Amber Theme**: Customizable color scheme with amber/orange terminal colors
+- **Click-Only Interaction**: No typing required - all navigation through clickable commands
+- **RSS Feed Integration**: Automatically fetches latest articles from Medium RSS
+- **Content Management**: Single source of truth in `content.ts` for easy updates
+- **Responsive Design**: Works on desktop and mobile devices
+- **Server-Side Rendering**: Fast load times with Next.js App Router
+- **Type-Safe**: Full TypeScript support throughout
+
+## Demo
+
+Check out the live demo at [erikhuckle.com](https://www.erikhuckle.com)
+
+## Quick Start
+
+### Prerequisites
+
+- Node.js 18.17 or higher
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/tronmongoose/portfolio.site.jan26.git
+cd portfolio.site.jan26
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Learn More
+## Customization
 
-To learn more about Next.js, take a look at the following resources:
+### Update Your Content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Edit `src/content/content.ts` to customize all content:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```typescript
+export const content = {
+  profile: {
+    name: "Your Name",
+    tagline: "Your tagline here"
+  },
+  links: {
+    medium: "https://medium.com/@yourname",
+    linkedin: "https://linkedin.com/in/yourname",
+    twitter: "https://x.com/yourhandle",
+    // Add or remove links as needed
+  },
+  writing: {
+    rss: "https://medium.com/feed/@yourname",
+    curated: [
+      // Your curated articles
+    ]
+  },
+  // ... more sections
+}
+```
 
-## Deploy on Vercel
+### Customize Colors
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Edit `src/app/globals.css` to change the color scheme:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```css
+:root {
+  --bg: #0B0E10;          /* Background color */
+  --fg: #FFCC66;          /* Primary text color */
+  --fg-dim: #996600;      /* Dimmed text */
+  --muted: #7F8A96;       /* Muted text */
+  --accent: #FFCC66;      /* Accent color */
+  --border: #25303A;      /* Border color */
+  --highlight: #332200;   /* Highlight background */
+}
+```
+
+Popular terminal color schemes:
+- **Amber**: `#FFCC66` (current)
+- **Green**: `#33ff33` (classic terminal)
+- **Blue**: `#00AAFF` (modern CLI)
+- **Purple**: `#B084EB` (synthwave)
+
+### Add Your Own Image
+
+Replace `public/media/punk2845.png` with your own image, or remove the image section from `src/app/page.tsx`.
+
+### Modify Sections
+
+The main page structure is in `src/app/page.tsx`. Add, remove, or reorder sections as needed:
+
+```tsx
+<Section title="Your New Section">
+  <OutputBlock>
+    Your content here
+  </OutputBlock>
+</Section>
+```
+
+## Project Structure
+
+```
+├── src/
+│   ├── app/
+│   │   ├── page.tsx          # Main page with terminal layout
+│   │   ├── layout.tsx         # Root layout
+│   │   └── globals.css        # Global styles and theme
+│   ├── components/
+│   │   └── terminal/          # Terminal UI components
+│   ├── content/
+│   │   └── content.ts         # Single source of truth for content
+│   └── lib/
+│       └── rss.ts             # RSS feed fetcher
+├── public/
+│   └── media/                 # Images and media files
+└── tailwind.config.ts         # Tailwind configuration
+```
+
+## Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Import your repository on [Vercel](https://vercel.com)
+3. Vercel will auto-detect Next.js and deploy
+4. Connect your custom domain in Vercel settings
+
+### Other Deployment Options
+
+- **Netlify**: Connect GitHub repo and deploy
+- **Cloudflare Pages**: Similar to Vercel
+- **Self-hosted**: Build with `npm run build` and serve the `out` directory
+
+## Building for Production
+
+```bash
+npm run build
+npm start
+```
+
+## Tech Stack
+
+- [Next.js 15](https://nextjs.org/) - React framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [Radix UI](https://www.radix-ui.com/) - Unstyled components
+- [Lucide Icons](https://lucide.dev/) - Icons
+
+## Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+## License
+
+MIT License - feel free to use this for your own portfolio!
+
+## Credits
+
+Originally created by [Erik Huckle](https://www.erikhuckle.com) with assistance from Claude Code.
+
+## Support
+
+If you find this useful, consider:
+- Starring the repository
+- Sharing it with others
+- Following [@Beyourhuckberry](https://x.com/Beyourhuckberry) on X/Twitter
+
+---
+
+Built with Terminal aesthetics in mind. Happy coding! 🖥️
