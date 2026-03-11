@@ -96,6 +96,7 @@ export default async function Home() {
         <div className="mb-8">
           <p className="text-muted mb-2">$ cat ./sections.txt</p>
           <div className="pl-4 flex flex-wrap gap-4">
+            <a href="/digest" className="hover:bg-highlight px-1">[0] weekly digest</a>
             <a href="#writing" className="hover:bg-highlight px-1">[1] writing</a>
             <a href="#linkedin" className="hover:bg-highlight px-1">[2] linkedin</a>
             <a href="#tweets" className="hover:bg-highlight px-1">[3] tweets</a>

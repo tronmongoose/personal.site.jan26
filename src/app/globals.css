@@ -90,6 +90,68 @@ a:focus-visible {
   color: var(--fg);
 }
 
+/* Digest article content styling */
+.digest-content h2 {
+  color: var(--fg);
+  font-size: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.25rem;
+}
+
+.digest-content h3 {
+  color: var(--fg-dim);
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.digest-content p {
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.digest-content strong {
+  color: var(--fg);
+}
+
+.digest-content em {
+  color: var(--fg-dim);
+}
+
+.digest-content ul,
+.digest-content ol {
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+}
+
+.digest-content li {
+  margin-bottom: 0.5rem;
+}
+
+.digest-content a {
+  color: var(--fg);
+}
+
+.digest-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+.digest-content blockquote {
+  border-left: 2px solid var(--fg-dim);
+  padding-left: 1rem;
+  color: var(--fg-dim);
+  margin: 1rem 0;
+  font-style: italic;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
